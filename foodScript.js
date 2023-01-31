@@ -1,7 +1,7 @@
 import { onSnake, expandSnake } from "./snakeScript.js";
 import { randomPosition } from "./handleGridScript.js";
 let food = getFoodPosition();
-const EXPANSION_RATE = 1;
+const EXPANSION_RATE = 2;
 
 export function update() {
   if (onSnake(food)) {

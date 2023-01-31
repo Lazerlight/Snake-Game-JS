@@ -1,7 +1,7 @@
 import { getInputDirection } from "./playerInput.js";
 
 export const SNAKE_SPEED = 5;
-const snakeBody = [{ x: 11, y: 11 }];
+const snakeBody = [{ x: 16, y: 16 }];
 let newSegments = 0;
 
 export function update() {
