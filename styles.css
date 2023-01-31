@@ -16,15 +16,17 @@ main {
   height: 100vmin;
   width: 100vmin;
   display: grid;
-  grid-template-columns: repeat(21, 1fr);
-  grid-template-rows: repeat(21, 1fr);
+  grid-template-columns: repeat(32, 1fr);
+  grid-template-rows: repeat(32, 1fr);
 }
 
 .snake {
-  background-color: black;
+  background-color: darkgreen;
   border: 0.25vmin solid black;
+  border-radius: 1vmin;
 }
 .food {
   background-color: red;
   border: 0.25vmin solid black;
+  border-radius: 50%;
 }
