@@ -36,6 +36,8 @@ function updateScore() {
     localStorage.getItem("score") < snakeBody.length ||
     localStorage.getItem("score") == null
   ) {
+    scoreEl.textContent = "Best Result: ";
+    scoreEl.textContent += snakeBody.length + 2;
     localStorage.setItem("score", snakeBody.length + 2);
   }
 }
