@@ -32,8 +32,28 @@ main {
   border-radius: 50%;
 }
 button {
+  display: none;
   margin-right: 5vmin;
-  border-radius: 1vh;
+  border: none;
   height: 10vmin;
   width: 15vmin;
+  background: url("./Graphics/Arrow.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.up {
+  transform: rotate(-90deg);
+}
+.down {
+  transform: rotate(90deg);
+}
+.right {
+  transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 768px) {
+  button {
+    display: inline;
+  }
 }
