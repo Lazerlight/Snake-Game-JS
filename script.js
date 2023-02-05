@@ -1,4 +1,6 @@
 const mainEl = document.querySelector("main");
+const crashScreen = document.querySelector(".crash-screen");
+const crashButton = document.getElementById("crashButton");
 playMusic();
 var intervalId = window.setInterval(function () {
   playMusic();
@@ -17,12 +19,13 @@ import {
 let lastRenderTime = 0;
 let gameOver = false;
 
+crashButton.addEventListener("click", (e) => {
+  window.location = "";
+});
 function renderGame(Time) {
   if (gameOver) {
     playCrash();
-    // if (confirm("You Lost! Please press OK to restart!")) {
-    //   window.location = "/";
-    // }
+    crashScreen.classList.add("show");
     return;
   }
 
