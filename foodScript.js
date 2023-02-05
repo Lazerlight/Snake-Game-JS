@@ -1,11 +1,12 @@
-import { onSnake, expandSnake } from "./snakeScript.js";
+import { onSnake, expandSnake, snakeBody } from "./snakeScript.js";
 import { randomPosition } from "./handleGridScript.js";
 let food = getFoodPosition();
 const EXPANSION_RATE = 2;
-
+const scoreEl = document.getElementById("score");
 export function update() {
   if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
+    updateScore();
     playSwallow();
     food = getFoodPosition();
   }
@@ -29,4 +30,12 @@ function getFoodPosition() {
 function playSwallow() {
   let audio = new Audio("./Audio/SNAKE_SWALLOW.mp3");
   audio.play();
+}
+function updateScore() {
+  if (
+    localStorage.getItem("score") < snakeBody.length ||
+    localStorage.getItem("score") == null
+  ) {
+    localStorage.setItem("score", snakeBody.length + 2);
+  }
 }

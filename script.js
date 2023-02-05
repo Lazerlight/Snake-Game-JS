@@ -1,6 +1,10 @@
 const mainEl = document.querySelector("main");
 const crashScreen = document.querySelector(".crash-screen");
 const crashButton = document.getElementById("crashButton");
+const scoreEl = document.getElementById("score");
+let score = localStorage.getItem("score");
+
+scoreEl.textContent += score;
 playMusic();
 var intervalId = window.setInterval(function () {
   playMusic();
