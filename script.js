@@ -1,4 +1,9 @@
 const mainEl = document.querySelector("main");
+playMusic();
+var intervalId = window.setInterval(function () {
+  playMusic();
+}, 9600);
+
 import { update as updateFood, draw as drawFood } from "./foodScript.js";
 import { outsideGrid } from "./handleGridScript.js";
 import {
@@ -14,9 +19,10 @@ let gameOver = false;
 
 function renderGame(Time) {
   if (gameOver) {
-    if (confirm("You Lost! Please press OK to restart!")) {
-      window.location = "/";
-    }
+    playCrash();
+    // if (confirm("You Lost! Please press OK to restart!")) {
+    //   window.location = "/";
+    // }
     return;
   }
 
@@ -45,4 +51,13 @@ function drawLoop() {
 
 function handleLose() {
   gameOver = outsideGrid(getHead()) || snakeIntesection();
+}
+
+function playCrash() {
+  let audio = new Audio("./Audio/SNAKE_CRASH.mp3");
+  audio.play();
+}
+function playMusic() {
+  let audio = new Audio("./Audio/GAME_MUSIC.mp3");
+  audio.play();
 }

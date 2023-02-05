@@ -6,6 +6,7 @@ const EXPANSION_RATE = 2;
 export function update() {
   if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
+    playSwallow();
     food = getFoodPosition();
   }
 }
@@ -24,4 +25,8 @@ function getFoodPosition() {
     foodPosition = randomPosition();
   }
   return foodPosition;
+}
+function playSwallow() {
+  let audio = new Audio("./Audio/SNAKE_SWALLOW.mp3");
+  audio.play();
 }

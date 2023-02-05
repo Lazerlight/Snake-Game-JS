@@ -51,6 +51,8 @@ button {
 .right {
   transform: rotate(-180deg);
 }
+.crash-screen {
+}
 
 @media screen and (max-width: 768px) {
   button {
